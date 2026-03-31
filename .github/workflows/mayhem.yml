@@ -59,7 +59,3 @@ jobs:
         mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
         args: --image ${{ steps.meta.outputs.tags }} --file ${{ 
           env.MP3_MAYHEMFILE }} --duration 300
-    - name: Upload SARIF file(s)
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: sarif
