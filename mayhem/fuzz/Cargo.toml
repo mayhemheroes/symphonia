@@ -1,0 +1,36 @@
+[package]
+name = "symphonia-fuzz"
+publish = false
+edition = "2024"
+homepage = "https://github.com/pdeljanov/Symphonia"
+license = "MPL-2.0"
+repository = "https://github.com/pdeljanov/Symphonia"
+rust-version = "1.85"
+version = "0.6.0"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.symphonia]
+path = "../../symphonia"
+default-features = false
+features = ["all"]
+
+# Prevent this from interfering with the upstream workspace
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "decode_any"
+path = "fuzz_targets/decode_any.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "decode_mp3"
+path = "fuzz_targets/decode_mp3.rs"
+test = false
+doc = false

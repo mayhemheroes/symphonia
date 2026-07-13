@@ -1,0 +1,9 @@
+project: symphonia
+target: decode_any
+
+cmds:
+  - cmd: /mayhem/decode_any
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
