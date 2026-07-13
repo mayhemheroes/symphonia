@@ -1,0 +1,9 @@
+project: symphonia
+target: decode_mp3
+
+cmds:
+  - cmd: /mayhem/decode_mp3
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
